@@ -8,6 +8,7 @@ Not a great solution, worse than O(N*M)
 
 def largest_rect(nm_matrix):
     curr_largest_rect = 0
+    bounds = (len())
     for row in nm_matrix:
         for col in row:
             if col == 1:
@@ -20,10 +21,18 @@ def largest_rect(nm_matrix):
 
 
 def _get_rect_size(nm_matrix, row, col):
-
-    max_x, max_y = 1
+    max_x, max_y = 0, 0
+    orig_x, orig_y = row, col
     coords = {'x': row, 'y': col}
-    while x
+
+    # find x bound
+    while (nm_matrix[coords['x']][coords['y']] != 0) and :
+        coords['x'] += 1
+        max_x += 1
+    # check all y vals
+    for x in range(orig_x, coords['x'] + 1):
+        while (nm_matrix[coords['x']][coords['y']] != 0) and :
+
 
 
 if __name__ == '__main__':
