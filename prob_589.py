@@ -2,11 +2,11 @@
     Alice wants to join her school's Probability Student Club.
     Membership dues are computed via one of two simple probabilistic games.
 
-    The first game: roll a die repeatedly.
+    GAME_1: roll a die repeatedly.
     Stop rolling once you get a five followed by a six.
     Your number of rolls is the amount you pay, in dollars.
 
-    The second game: same, except that
+    GAME_2: same, except that
     the stopping condition is a five followed by a five.
 
     Which of the two games should Alice elect to play?
@@ -21,6 +21,19 @@ Assumptions:
         are equal. prob(1) == prob(2) == ... == prob(6).
     random.random() is sufficiently random
     int(float) always rounds down
+
+Post-Writing Commentary:
+    Well after re-reading the problem, I focused on the entirely wrong
+    thing here. Read the problem well! oof.
+
+    Apparently these two scenarios are not equal because of the 'restart'
+    condition. Consider the case when a '5' is rolled:
+        for GAME_1: you roll a 6, or start again by rolling a 5.
+        for GAME_2: you must roll a 5 or start over.
+    This gives GAME_1 the advantage.
+
+    Also I totally missed the line about 'dollars' and stopping.
+    This is an interesting phenomenon!
 """
 
 import random
